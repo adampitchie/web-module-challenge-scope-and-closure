@@ -28,11 +28,13 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+    counter1 stores the return value of counterMaker. counter2 iterates count.
   2. Which of the two uses a closure? How can you tell?
-  
+    counter1 uses a closure because counterMaker uses a closure.
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     counter1 is preferable when you need to access a function from a parent level. counter2 would be preferable
+     when you don't need scoped variables.
 */
 
 // counter1 code
@@ -62,8 +64,9 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    let rand = Math.random() * 3
+    return Math.floor(rand)
 }
 
 
@@ -81,8 +84,19 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inning, numInnings){
+  let home = 0;
+  let away = 0;
+
+  for (let i = 0; i <= numInnings; i ++) {
+    home += inning()
+    away += inning()
+  }
+  
+  return {
+    'Home': home,
+    'Away': away,
+  }
 }
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
@@ -90,8 +104,14 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inning) {
+  let home = inning()
+  let away = inning()
+
+  return {
+    'Home': home,
+    'Away': away,
+  }
 }
 
 
@@ -136,8 +156,17 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScore, inning, numInnings) {
+
+  // there are no tests and the scoreboard() function doesn't console.log() items to the console????
+
+  let scoreboard = [];
+  let home = 0;
+  let away = 0;
+
+  for (let i = 0; i <= numInnings; i++) { 
+    
+  }
 }
 
 
