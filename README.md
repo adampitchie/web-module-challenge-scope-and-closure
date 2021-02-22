@@ -43,6 +43,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+  A closure is a function that has its own scope, i.e. variables defined in the scope can only be accessed in the scope.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,8 +65,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+  personalDice(){}. Because it has its own variable name, and returns a function with its own scope.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+  The name is always the same, the newRoll value can change every time because it's random.
 c. What is the lexical scope of `newRoll`? 
+  It's bound to return function(){}.
 
 
 ### Task 3 - Stretch Goals
